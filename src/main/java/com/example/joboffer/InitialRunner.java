@@ -24,9 +24,10 @@ public class InitialRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         List<JobOffer> offers = new ArrayList<>();
-        offers.add(new JobOffer(Category.IT, LocalDate.now(), LocalDate.now().plusDays(5), new UserName("Mary")));
-        offers.add(new JobOffer(Category.OFFICE, LocalDate.now().minusDays(2), LocalDate.now(), new UserName("John")));
-        offers.add(new JobOffer(Category.IT, LocalDate.now().minusDays(5), LocalDate.now().minusDays(2), new UserName("Patric")));
+        offers.add(new JobOffer(Category.IT, LocalDate.now(), LocalDate.now().plusDays(5), new UserName("Atlas")));
+        offers.add(new JobOffer(Category.IT, LocalDate.now(), LocalDate.now().plusDays(2), new UserName("Rystor")));
+        offers.add(new JobOffer(Category.OFFICE, LocalDate.now().minusDays(2), LocalDate.now(), new UserName("Rystor")));
+        offers.add(new JobOffer(Category.IT, LocalDate.now().minusDays(5), LocalDate.now().minusDays(2), new UserName("Atlas")));
 
         jobOfferRepository.saveAll(offers);
     }
