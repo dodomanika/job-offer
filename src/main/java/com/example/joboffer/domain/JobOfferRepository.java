@@ -16,5 +16,7 @@ public interface JobOfferRepository extends JpaRepository<JobOffer, Long> {
     List<JobOffer> findAllByEmployerNameAndBetweenStartDateAndEndDate(@Param("date") LocalDate date,
                                                      @Param("employerName") UserName employerName);
 
-    //List<JobOffer> findAllByStartDateBeforeAndEndDateAfterAndCategory(LocalDate date, Category category);
+    @Query(value = "from JobOffer where :date between startDate and endDate and category = :category")
+    List<JobOffer> findAllByCategoryAndBetweenStartDateAndEndDate(@Param("date") LocalDate date,
+                                                                  @Param("category") Category category);
 }

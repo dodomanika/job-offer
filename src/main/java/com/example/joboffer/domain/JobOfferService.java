@@ -16,11 +16,15 @@ public class JobOfferService {
         return new JobOffer();
     }*/
 
-    public List<JobOffer> getValidOffers(UserName name) {
+    //TODO: Use JpaSpecificationExecutor
+    public List<JobOffer> getValidOffers(UserName name, Category category) {
         LocalDate today = LocalDate.now();
 
         if (name != null) {
             return jobOfferRepository.findAllByEmployerNameAndBetweenStartDateAndEndDate(today, name);
+        }
+        if (category != null) {
+            return jobOfferRepository.findAllByCategoryAndBetweenStartDateAndEndDate(today, category);
         }
         return jobOfferRepository.findAllBetweenStartDateAndEndDate(today);
     }

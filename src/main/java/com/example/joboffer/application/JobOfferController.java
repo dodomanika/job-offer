@@ -1,5 +1,6 @@
 package com.example.joboffer.application;
 
+import com.example.joboffer.domain.Category;
 import com.example.joboffer.domain.JobOffer;
 import com.example.joboffer.domain.JobOfferService;
 import com.example.joboffer.domain.UserName;
@@ -23,8 +24,9 @@ public class JobOfferController {
     }
 
     @GetMapping
-    ResponseEntity<List<JobOfferResponse>> getValidOffers(@RequestParam(required = false) UserName employerName) {
-        List<JobOfferResponse> validOffers = jobOfferService.getValidOffers(employerName)
+    ResponseEntity<List<JobOfferResponse>> getValidOffers(@RequestParam(required = false) UserName employerName,
+                                                          @RequestParam(required = false) Category category) {
+        List<JobOfferResponse> validOffers = jobOfferService.getValidOffers(employerName, category)
                 .stream()
                 .map(JobOffer::toDto)
                 .collect(Collectors.toList());
