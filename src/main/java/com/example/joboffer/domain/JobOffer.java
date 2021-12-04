@@ -1,7 +1,6 @@
 package com.example.joboffer.domain;
 
 import com.example.joboffer.application.JobOfferResponse;
-import lombok.Getter;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;

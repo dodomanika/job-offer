@@ -2,9 +2,11 @@ package com.example.joboffer.application;
 
 import com.example.joboffer.domain.JobOffer;
 import com.example.joboffer.domain.JobOfferService;
+import com.example.joboffer.domain.UserName;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,8 +23,8 @@ public class JobOfferController {
     }
 
     @GetMapping
-    ResponseEntity<List<JobOfferResponse>> getValidOffers() {
-        List<JobOfferResponse> validOffers = jobOfferService.getValidOffers()
+    ResponseEntity<List<JobOfferResponse>> getValidOffers(@RequestParam(required = false) UserName employerName) {
+        List<JobOfferResponse> validOffers = jobOfferService.getValidOffers(employerName)
                 .stream()
                 .map(JobOffer::toDto)
                 .collect(Collectors.toList());

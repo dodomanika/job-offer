@@ -16,14 +16,13 @@ public class JobOfferService {
         return new JobOffer();
     }*/
 
-    public List<JobOffer> getValidOffers() {
+    public List<JobOffer> getValidOffers(UserName name) {
         LocalDate today = LocalDate.now();
-        return jobOfferRepository.findAllBetweenStartDateAndEndDate(today);
-    }
 
-    public List<JobOffer> getValidOffersByEmployerName(UserName name) {
-        LocalDate today = LocalDate.now();
-        return jobOfferRepository.findAllByEmployerNameAndBetweenStartDateAndEndDate(today, name);
+        if (name != null) {
+            return jobOfferRepository.findAllByEmployerNameAndBetweenStartDateAndEndDate(today, name);
+        }
+        return jobOfferRepository.findAllBetweenStartDateAndEndDate(today);
     }
 
     /*public List<JobOffer> getValidOffersByCategory(Category category) {
