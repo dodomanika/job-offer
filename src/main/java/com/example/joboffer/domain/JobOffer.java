@@ -1,6 +1,7 @@
 package com.example.joboffer.domain;
 
 import com.example.joboffer.application.JobOfferResponse;
+import lombok.Getter;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -22,13 +23,15 @@ public class JobOffer {
     @Embedded
     private UserName employerName;
 
-
     public JobOffer(Category category, LocalDate startDate, LocalDate endDate, UserName employerName) {
         this.category = category;
         this.startDate = startDate;
         this.endDate = endDate;
         this.employerName = employerName;
     }
+
+    /*For JPA only*/
+    protected JobOffer() {}
 
     public JobOfferResponse toDto() {
         return new JobOfferResponse(category, employerName);
