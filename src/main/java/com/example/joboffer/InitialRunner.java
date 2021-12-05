@@ -27,6 +27,8 @@ public class InitialRunner implements ApplicationRunner {
         offers.add(new JobOffer(Category.IT, LocalDate.now(), LocalDate.now().plusDays(5), new UserName("Atlas")));
         offers.add(new JobOffer(Category.IT, LocalDate.now(), LocalDate.now().plusDays(2), new UserName("Rystor")));
         offers.add(new JobOffer(Category.OFFICE, LocalDate.now().minusDays(2), LocalDate.now(), new UserName("Rystor")));
+
+        //Not valid job offer
         offers.add(new JobOffer(Category.IT, LocalDate.now().minusDays(5), LocalDate.now().minusDays(2), new UserName("Atlas")));
 
         jobOfferRepository.saveAll(offers);

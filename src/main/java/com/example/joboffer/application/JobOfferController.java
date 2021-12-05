@@ -20,6 +20,7 @@ public class JobOfferController {
         this.jobOfferService = jobOfferService;
     }
 
+    //Todo: offer created by user: add user id in header and retrieve employerName instead of having it in request body
     @PostMapping
     public ResponseEntity<Void> saveOffer(@RequestBody JobOfferRequest offerRequest) {
         jobOfferService.saveOffer(offerRequest);
@@ -28,7 +29,7 @@ public class JobOfferController {
     }
 
     @GetMapping
-    ResponseEntity<List<JobOfferResponse>> getValidOffers(@RequestParam(required = false) UserName employerName,
+    public ResponseEntity<List<JobOfferResponse>> getValidOffers(@RequestParam(required = false) UserName employerName,
                                                           @RequestParam(required = false) Category category) {
         List<JobOfferResponse> validOffers = jobOfferService.getValidOffers(employerName, category)
                 .stream()
