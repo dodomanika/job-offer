@@ -12,7 +12,7 @@ public class UserName {
 
     public UserName(String name) {
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("User name: " + name + " is too short");
+            throw new IllegalArgumentException("User name: " + name + " is empty or blank");
         }
         this.name = name;
     }
