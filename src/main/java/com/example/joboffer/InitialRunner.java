@@ -3,7 +3,7 @@ package com.example.joboffer;
 import com.example.joboffer.joboffer.domain.Category;
 import com.example.joboffer.joboffer.domain.JobOffer;
 import com.example.joboffer.joboffer.domain.JobOfferRepository;
-import com.example.joboffer.joboffer.domain.UserName;
+import com.example.joboffer.sharedkernell.UserName;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;

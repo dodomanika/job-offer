@@ -1,6 +1,7 @@
 package com.example.joboffer.joboffer.domain;
 
 import com.example.joboffer.joboffer.application.JobOfferRequest;
+import com.example.joboffer.sharedkernell.UserName;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

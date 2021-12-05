@@ -3,7 +3,7 @@ package com.example.joboffer.joboffer.application;
 import com.example.joboffer.joboffer.domain.Category;
 import com.example.joboffer.joboffer.domain.JobOffer;
 import com.example.joboffer.joboffer.domain.JobOfferService;
-import com.example.joboffer.joboffer.domain.UserName;
+import com.example.joboffer.sharedkernell.UserName;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

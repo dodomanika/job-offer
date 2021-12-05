@@ -1,5 +1,6 @@
 package com.example.joboffer.joboffer.domain;
 
+import com.example.joboffer.sharedkernell.UserName;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

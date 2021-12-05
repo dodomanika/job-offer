@@ -1,6 +1,6 @@
 package com.example.joboffer.user.domain;
 
-import com.example.joboffer.joboffer.domain.UserName;
+import com.example.joboffer.sharedkernell.UserName;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,6 +1,7 @@
 package com.example.joboffer.joboffer.domain;
 
 import com.example.joboffer.joboffer.application.JobOfferResponse;
+import com.example.joboffer.sharedkernell.UserName;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;

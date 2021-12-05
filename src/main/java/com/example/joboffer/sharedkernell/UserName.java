@@ -1,4 +1,4 @@
-package com.example.joboffer.joboffer.domain;
+package com.example.joboffer.sharedkernell;
 
 import lombok.Getter;
 

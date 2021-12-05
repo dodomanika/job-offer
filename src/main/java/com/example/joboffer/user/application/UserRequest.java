@@ -1,6 +1,6 @@
 package com.example.joboffer.user.application;
 
-import com.example.joboffer.joboffer.domain.UserName;
+import com.example.joboffer.sharedkernell.UserName;
 import com.example.joboffer.user.domain.User;
 
 import java.io.Serializable;
