@@ -6,13 +6,12 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 @Getter
-//TODO: Validate input
 //TODO: Add tests
 public class UserName {
     private String name;
 
     public UserName(String name) {
-        if (name.trim().length() < 1) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("User name: " + name + " is too short");
         }
         this.name = name;
@@ -20,5 +19,20 @@ public class UserName {
 
     /*For JPA only*/
     protected UserName() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        UserName userName = (UserName) o;
+
+        return name.equals(userName.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 }

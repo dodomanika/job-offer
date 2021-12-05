@@ -36,4 +36,19 @@ public class JobOffer {
     public JobOfferResponse toDto() {
         return new JobOfferResponse(category, employerName);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        JobOffer jobOffer = (JobOffer) o;
+
+        return id.equals(jobOffer.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
 }
