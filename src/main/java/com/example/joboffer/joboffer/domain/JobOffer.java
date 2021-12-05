@@ -1,6 +1,6 @@
-package com.example.joboffer.domain;
+package com.example.joboffer.joboffer.domain;
 
-import com.example.joboffer.application.JobOfferResponse;
+import com.example.joboffer.joboffer.application.JobOfferResponse;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;

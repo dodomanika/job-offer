@@ -1,4 +1,4 @@
-package com.example.joboffer.domain;
+package com.example.joboffer.joboffer.domain;
 
 import lombok.Getter;
 
@@ -12,6 +12,9 @@ public class UserName {
     private String name;
 
     public UserName(String name) {
+        if (name.trim().length() < 1) {
+            throw new IllegalArgumentException("User name: " + name + " is too short");
+        }
         this.name = name;
     }
 
