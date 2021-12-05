@@ -5,10 +5,7 @@ import com.example.joboffer.domain.JobOffer;
 import com.example.joboffer.domain.JobOfferService;
 import com.example.joboffer.domain.UserName;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +18,13 @@ public class JobOfferController {
 
     public JobOfferController(JobOfferService jobOfferService) {
         this.jobOfferService = jobOfferService;
+    }
+
+    @PostMapping
+    public ResponseEntity<Void> saveOffer(@RequestBody JobOfferRequest offerRequest) {
+        jobOfferService.saveOffer(offerRequest);
+
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping

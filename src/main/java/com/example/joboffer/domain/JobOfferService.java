@@ -1,5 +1,6 @@
 package com.example.joboffer.domain;
 
+import com.example.joboffer.application.JobOfferRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -11,6 +12,11 @@ public class JobOfferService {
 
     public JobOfferService(JobOfferRepository jobOfferRepository) {
         this.jobOfferRepository = jobOfferRepository;
+    }
+
+    public void saveOffer(JobOfferRequest offerRequest) {
+        JobOffer offer = offerRequest.toEntity();
+        jobOfferRepository.save(offer);
     }
 
     //TODO: Use JpaSpecificationExecutor
